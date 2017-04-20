@@ -13,7 +13,7 @@ services:
 #          dockerfile: Dockerfile
         container_name: imdock-cnp56
         ports:
-            - "80:80"
+            - "2001:80"
 #            - "8022:22"
 #            - "9000:9000"
         volumes:
