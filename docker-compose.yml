@@ -11,7 +11,7 @@ services:
 #        build:
 #          context: .
 #          dockerfile: Dockerfile
-        container_name: imdock-cnp56
+        container_name: project-name
         ports:
             - "2001:80"
 #            - "8022:22"
