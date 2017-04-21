@@ -12,6 +12,35 @@ Centos(Nginx + PHP5.6)
   * this project use management by docker-compose
   
   * you can use this for Laravel-5 PHP Framework
+
+    
+## How to install:
+
+    imagi@centos ~ $ git clone https://github.com/imagine10255/imdock-cnp56.git {your-project-name}
+
+    imagi@centos ~ $ cd {your-project-name}
+    
+    #change your custom settting
+    imagi@centos ~/{your-project-name} $ vim ./docker-compose-yml
+    
+    imagi@centos ~/{your-project-name} $ docker-compose up
+    
+    #open browser, testing your host-ip, see the phpinfo is success! ctrl+c close this
+    #now, you can move the your project to website dir
+    
+    imagi@centos ~/{your-project-name} $ cp ./sites-enable/default.vhost.sample ./sites-enable/default.vhost
+    
+    #setting your custom nginx config
+    imagi@centos ~/{your-project-name} $ vim ./default.vhost
+    imagi@centos ~/{your-project-name} $ docker-compose up -d
+            
+            
+## How to and other docker-compose use the same network :
+
+    #if you not have group network, you can create this, and other docker-compose use this network setting
+
+    imagi@centos ~ $ docker network create --driver bridge imdockgroup
+    
     
 ## How to change setting:
 
