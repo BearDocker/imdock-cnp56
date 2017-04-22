@@ -12,6 +12,7 @@ services:
 #          context: .
 #          dockerfile: Dockerfile
         container_name: {project-sn}
+        working_dir: /var/www
         ports:
             - "2001:80"
 #            - "8022:22"
