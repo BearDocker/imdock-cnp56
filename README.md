@@ -20,21 +20,26 @@ Centos(Nginx + PHP5.6)
     ~ $ cd {project-name}
     ~/{project-name} $ git clone https://github.com/imagine10255/imdock-cnp56.git
     ~/{project-name} $ cd imdock-cnp56
-    
-    # change your custom settting (container_name: {project-name})
-    ~/{project-name}/imdock-cnp56 $ vim ./docker-compose-yml      
+
+
+#### change your custom settting (container_name: {project-name})
+
+    ~/{project-name}/imdock-cnp56 $ vim ./docker-compose-yml
     ~/{project-name}/imdock-cnp56 $ docker-compose up
     
-    # open browser, testing your host-ip, see the phpinfo is success! ctrl+c close this
-    # now, you can move the your project to website dir
+#### open browser, testing your host-ip, see the phpinfo is success! ctrl+c close this
+#### now, you can move the your project to website dir
     
     ~/{project-name}/imdock-cnp56 $ cp ./sites-enable/default.vhost.sample ./sites-enable/default.vhost
     
-    # setting your custom nginx config (volumes: ./website:/var/www → ../{project-dir}:/var/www)
+#### setting your custom nginx config (volumes: ./website:/var/www → ../{project-dir}:/var/www)
+
     ~/{project-name}/imdock-cnp56 $ vim ./docker-compose-yml
     ~/{project-name}/imdock-cnp56 $ vim ./default.vhost
     ~/{project-name}/imdock-cnp56 $ docker-compose up -d
 
+
+## Reference architecture:
 
 ```txt
 {project-name}
@@ -42,7 +47,9 @@ Centos(Nginx + PHP5.6)
 │   ├── conf/
 │   ├── sites-enable/(nginx website setting)
 │   ├── sites-module/
-│   └── website(sample phpinfo)
+│   ├── website(sample phpinfo)
+│   ├── Dockerfile
+│   └── docker-compose.yml
 └── {project-dir}
     └── ...
 ```
